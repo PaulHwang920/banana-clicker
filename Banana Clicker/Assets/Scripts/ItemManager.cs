@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class ItemManager : MonoBehaviour
     public int bananaPerSecond;
     public int count;
     public string itemName;
+    public Color standard;
+    public Color affordable;
     private float baseCost;
 
     void Start()
@@ -20,6 +23,15 @@ public class ItemManager : MonoBehaviour
     void Update()
     {
         itemInfo.text = itemName + "\nBananas: " + bananaPerSecond + "/s" + "\nCost: " + cost;
+
+        if (click.bananas >= cost)
+        {
+            GetComponent<Image>().color = affordable;
+        }
+        else
+        {
+            GetComponent<Image>().color = standard;
+        }
     }
 
     public void purchaseItem()
