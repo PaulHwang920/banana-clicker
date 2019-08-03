@@ -10,7 +10,7 @@ public class MainButtonClick : MonoBehaviour
 
     private void Update()
     {
-        bananaDisplay.text = "Bananas: " + bananas;
+        bananaDisplay.text = "Bananas: " + bananas.ToString("F0");
     }
 
     public void ClickButton()

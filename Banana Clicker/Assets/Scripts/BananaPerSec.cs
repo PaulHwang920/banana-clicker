@@ -19,9 +19,9 @@ public class BananaPerSec : MonoBehaviour
         bpsDisplay.text = getBananaPerSec() + " bananas/sec";
     }
 
-    public int getBananaPerSec()
+    public float getBananaPerSec()
     {
-        int tick = 0;
+        float tick = 0;
         foreach(ItemManager item in items)
         {
             tick += item.count * item.bananaPerSecond;
@@ -31,7 +31,7 @@ public class BananaPerSec : MonoBehaviour
 
     public void autoBananaPerSec()
     {
-        click.bananas += getBananaPerSec();
+        click.bananas += getBananaPerSec() / 10;
     }
 
     IEnumerator AutoTick()
@@ -39,7 +39,7 @@ public class BananaPerSec : MonoBehaviour
         while (true)
         {
             autoBananaPerSec();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }
