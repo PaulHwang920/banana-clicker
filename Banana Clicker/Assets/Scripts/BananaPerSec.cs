@@ -16,7 +16,7 @@ public class BananaPerSec : MonoBehaviour
 
     private void Update()
     {
-        bpsDisplay.text = getBananaPerSec() + " bananas/sec";
+        bpsDisplay.text = CurrencyConverter.Instance.GetCurrencyIntoString(getBananaPerSec(), false, false) + " bananas/sec";
     }
 
     public float getBananaPerSec()

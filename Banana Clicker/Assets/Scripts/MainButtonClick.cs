@@ -10,7 +10,7 @@ public class MainButtonClick : MonoBehaviour
 
     private void Update()
     {
-        bananaDisplay.text = "Bananas: " + bananas.ToString("F0");
+        bananaDisplay.text = "Bananas: " + CurrencyConverter.Instance.GetCurrencyIntoString(bananas, false, false);
     }
 
     public void ClickButton()
