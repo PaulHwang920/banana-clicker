@@ -7,11 +7,14 @@ public class UpgradeManager : MonoBehaviour
 {
     public MainButtonClick click;
     public UnityEngine.UI.Text itemLevel;
+
     public float cost;
     public int count = 1;
     public int clickPower;
+
     public Color standard;
     public Color affordable;
+
     private float baseCost;
 
     private void Start()

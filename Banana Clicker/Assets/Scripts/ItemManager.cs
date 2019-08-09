@@ -7,13 +7,16 @@ public class ItemManager : MonoBehaviour
 {
     public UnityEngine.UI.Text itemInfo;
     public MainButtonClick click;
+
     public float cost;
     public int bananaPerSecond;
     public int count;
     public int achievementMultiplier;
     public string itemName;
+
     public Color standard;
     public Color affordable;
+
     private float baseCost;
 
     void Start()

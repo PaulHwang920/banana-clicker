@@ -6,6 +6,7 @@ public class BananaPerSec : MonoBehaviour
 {
 
     public UnityEngine.UI.Text bpsDisplay;
+
     public MainButtonClick click;
     public ItemManager[] items;
     public AchievementManager[] achievements;
