@@ -19,6 +19,8 @@ public class UpgradeManager : MonoBehaviour
         baseCost = cost;
     }
 
+    // Updates the display text for the click upgrade appropriately
+    // Also highlights item when affordable
     void Update()
     {
         itemLevel.text = "Click Upgrade\nLevel: " + count + "\nCost: " + cost;
@@ -33,14 +35,16 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    // what happens when upgrade is purchased
     public void purchaseUpgrade()
     {
+        // if affordable
         if (click.bananas >= cost)
         {
-            click.bananas -= cost;
-            count += 1;
-            click.bananaPerClick += clickPower;
-            cost = Mathf.Round(baseCost * Mathf.Pow(1.15f, count));
+            click.bananas -= cost; // pay money
+            count += 1; //get upgrade
+            click.bananaPerClick += clickPower; //apply upgrade
+            cost = Mathf.Round(baseCost * Mathf.Pow(1.15f, count)); //increase cost
             
         }
     }

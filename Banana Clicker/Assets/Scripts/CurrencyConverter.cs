@@ -26,6 +26,7 @@ public class CurrencyConverter : MonoBehaviour
         }
     }
 
+    // Returns string with appropriate abbreviation for large amounts.
     public string GetCurrencyIntoString(float valueToConvert, bool currencyPerSec, bool currencyPerClick)
     {
         string converted;

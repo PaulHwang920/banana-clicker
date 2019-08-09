@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemManager : MonoBehaviour
+public class AchievementManager : MonoBehaviour
 {
     public UnityEngine.UI.Text itemInfo;
     public MainButtonClick click;
     public float cost;
-    public int bananaPerSecond;
     public int count;
-    public int achievementMultiplier;
     public string itemName;
     public Color standard;
     public Color affordable;
@@ -25,7 +23,7 @@ public class ItemManager : MonoBehaviour
     // Also highlights item when affordable
     void Update()
     {
-        itemInfo.text = itemName + "\nBananas: " + bananaPerSecond + "/s" + "\nCost: " + cost;
+        itemInfo.text = itemName + "\nCost: " + cost;
 
         if (click.bananas >= cost)
         {
@@ -37,15 +35,15 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    // What happens when an item is purchased
-    public void purchaseItem()
+    // what happens when achievement is purchased
+    public void purchaseAchievement()
     {
         // if affordable
         if (click.bananas >= cost)
         {
             click.bananas -= cost; // pay money
-            count += 1; // get item
-            cost = Mathf.Round(baseCost * Mathf.Pow(1.15f, count)); //increase cost
+            count += 1; // get achievement
+            cost = Mathf.Round(baseCost * Mathf.Pow(1.15f, count)); // increase cost
         }
     }
 }
