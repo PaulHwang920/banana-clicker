@@ -18,12 +18,20 @@ public class AchievementManager : MonoBehaviour
     private float baseCost;
     private float[] monkeyCosts;
     private float[] farmerCosts;
+    private float[] engineerCosts;
+    private float[] minerCosts;
+    private float[] wizardCosts;
+    private float[] astronautCosts;
 
     void Start()
     {
         baseCost = cost;
-        monkeyCosts = new float[]{ 1000f, 10000f, 100000, 5000000, 100000000f, 800000000000f };
-        farmerCosts = new float[] { 5000f, 50000f, 500000, 25000000, 500000000f, 4000000000000f };
+        monkeyCosts = new float[]{ 1000f, 10000f, 100000f, 5000000f, 100000000f, 800000000000f };
+        farmerCosts = new float[] { 5000f, 50000f, 500000f, 25000000f, 500000000f, 4000000000000f };
+        engineerCosts = new float[] { 11000f, 55000f, 550000f, 55000000f, 550000000f, 5500000000000f };
+        minerCosts = new float[] { 120000f, 600000f, 6000000f, 600000000f, 500000000f, 60000000000000f };
+        wizardCosts = new float[] { 1300000f, 6500000f, 65000000f, 6500000000f, 650000000000f, 65000000000000f };
+        astronautCosts = new float[] { 14000000f, 70000000f, 700000000f, 70000000000f, 7000000000000f, 700000000000000f };
     }
 
     // Updates the display text for the click upgrade appropriately
@@ -57,6 +65,22 @@ public class AchievementManager : MonoBehaviour
             if (itemName == "Advanced Monkey Farmers")
             {
                 cost = farmerCosts[count]; // increase cost
+            }
+            if (itemName == "Engineer Bot 5000")
+            {
+                cost = engineerCosts[count]; // increase cost
+            }
+            if (itemName == "Dual Pickaxe Frenzy")
+            {
+                cost = minerCosts[count]; // increase cost
+            }
+            if (itemName == "Monkey Wizard")
+            {
+                cost = wizardCosts[count]; // increase cost
+            }
+            if (itemName == "Monkey Astronaut")
+            {
+                cost = astronautCosts[count]; // increase cost
             }
         }
     }

@@ -28,6 +28,10 @@ public class BananaPerSec : MonoBehaviour
         float tick = 0;
         float monkeyMultiplier = 0.0f;
         float farmerMultiplier = 0.0f;
+        float engineerMultiplier = 0.0f;
+        float minerMultiplier = 0.0f;
+        float wizardMultiplier = 0.0f;
+        float astronautMultiplier = 0.0f;
         // managing item multipliers
         foreach (AchievementManager achieve in achievements) {
             if (achieve.itemName == "Lots and lots of Monkeys")
@@ -37,6 +41,22 @@ public class BananaPerSec : MonoBehaviour
             if (achieve.itemName == "Advanced Monkey Farmers")
             {
                 farmerMultiplier = Mathf.Pow(2, achieve.count);
+            }
+            if (achieve.itemName == "Engineer Bot 5000")
+            {
+                engineerMultiplier = Mathf.Pow(2, achieve.count);
+            }
+            if (achieve.itemName == "Dual Pickaxe Frenzy")
+            {
+                minerMultiplier = Mathf.Pow(2, achieve.count);
+            }
+            if (achieve.itemName == "Magical Wizardry of Wizards")
+            {
+                wizardMultiplier = Mathf.Pow(2, achieve.count);
+            }
+            if (achieve.itemName == "Apollo 11")
+            {
+                astronautMultiplier = Mathf.Pow(2, achieve.count);
             }
         }
         // calculating total generation per item
@@ -50,7 +70,22 @@ public class BananaPerSec : MonoBehaviour
             {
                 tick += item.count * (item.bananaPerSecond * farmerMultiplier);
             }
-
+            if (item.itemName == "Monkey Engineer")
+            {
+                tick += item.count * (item.bananaPerSecond * engineerMultiplier);
+            }
+            if (item.itemName == "Monkey Miner")
+            {
+                tick += item.count * (item.bananaPerSecond * minerMultiplier);
+            }
+            if (item.itemName == "Monkey Wizard")
+            {
+                tick += item.count * (item.bananaPerSecond * wizardMultiplier);
+            }
+            if (item.itemName == "Monkey Astronaut")
+            {
+                tick += item.count * (item.bananaPerSecond * astronautMultiplier);
+            }
         }
         return tick;
     }
